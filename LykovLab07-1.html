@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>FatkoLab07-1</title>
+</head>
+<body>
+    <h2>Форма для завдання</h2>
+    <form action="accept.html" method="get">
+        <table>
+            <tr>
+                <td>Ваше ім'я:</td>
+                <td><input id="name" name="name" type="text" maxlength="40" placeholder="Введіть ваше ім'я"></td>
+            </tr>
+            <tr>
+                <td>Ваша стать:</td>
+                <td>
+                    <input type="radio" name="pol" value="male"> Чоловіча<br>
+                    <input type="radio" name="pol" value="female"> Жіноча<br>
+                    <input type="radio" name="pol" value="other"> Інша
+                </td>
+            </tr>
+            <tr>
+                <td>На якому курсі Ви навчаєтесь?</td>
+                <td>
+                    <select id="curs" name="curs">
+                        <option value="1" selected>Перший</option>
+                        <option value="2">Другий</option>
+                        <option value="3">Третій</option>
+                        <option value="4">Четвертий</option>
+                        <option value="5">П'ятий</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Які дисципліни ви вивчаєте на курсі?</td>
+                <td>
+                    <input type="checkbox" name="web" value="yes" checked> WEB-програмування<br>
+                    <input type="checkbox" name="database" value="yes"> Бази даних<br>
+                    <input type="checkbox" name="intelligence" value="yes"> Методи та системи штучного інтелекту<br>
+                    <input type="checkbox" name="theory" value="yes"> Теорія прийняття рішень
+                </td>
+            </tr>
+            <tr>
+                <td>Напишіть декілька слів про себе:</td>
+                <td><textarea id="about" name="about" rows="6" placeholder="Розкажіть трохи про себе..."></textarea></td>
+            </tr>
+            <tr>
+                <td>Завантажте файл:</td>
+                <td><input type="file" id="friend" name="friend" accept=".txt,.doc,.docx,.pdf"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Відіслати дані"></td>
+                <td><input type="reset" value="Очистити форму"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
