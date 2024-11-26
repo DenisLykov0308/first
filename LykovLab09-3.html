@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#section1">Розділ 1</a></li>
+        <li><a href="#section2">Розділ 2</a></li>
+        <li><a href="#section3">Розділ 3</a></li>
+    </ul>
+    <div id="section1">
+        <div class="section-title">Розділ 1: Вступ</div>
+        <p class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vehicula felis, ut tincidunt mauris. Aliquam fermentum neque nec velit cursus, sit amet fermentum urna pellentesque.
+        </p>
+        <div class="foot">
+            <small>Примітка: Lorem ipsum dolor sit amet.</small>
+        </div>
+    </div>
+    <div id="section2">
+        <div class="title">Розділ 2: Застосування класів</div>
+        <p class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non justo eu arcu tincidunt ultricies in id quam. Donec vehicula metus nec ligula tempor, ut feugiat lacus tempor.
+        </p>
+        <div class="foot">
+            <small>Порада: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+        </div>
+    </div>
+    <div id="section3">
+        <div class="title">Розділ 3: Підсумки</div>
+        <p class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Phasellus euismod purus sit amet nunc accumsan fringilla. Sed ut nisi nec leo eleifend suscipit.
+        </p>
+        <div class="foot">
+            <small>Висновок: Lorem ipsum dolor sit amet.</small>
+        </div>
+    </div>
+    <div class="info">
+        <small>Автор: Ликов</small>
+    </div>
+    <style>
+        .title {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #4b0082;
+            margin-bottom: 10px;
+        }
+        .text {
+            font-size: 14pt;
+            color: #333333;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .foot small {
+            font-size: 12pt;
+            font-style: italic;
+            color: #808080;
+            text-align: right;
+        }
+        .menu {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #008080;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .menu li a:hover {
+            text-decoration: underline;
+        }
+        .info small {
+            font-size: 12pt;
+            font-style: italic;
+            color: #2f4f4f;
+        }
+    </style>
+</body>
+</html>
