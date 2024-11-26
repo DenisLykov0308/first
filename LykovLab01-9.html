@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Моя біографія">
+    <meta name="Keywords" content="Про себе, програмування, хоббі">
+    <title>Автобіографія</title>
+</head>
+<body bgcolor="#0b0b64" text="#4cf5f2" face="Times New Roman, Times, serif"> 
+    <h1 align="center">Про себе</h1>
+    <p align="justify">Мене звати <b>Денис</b>, мені 19 років. Родився і виріс в <i>Україні</i>. Зараз навчаюсь в <u>Національному університеті "Полтавська Політехніка ім. Юрія Кондратюка"</u> на 3-му курсі.</p>
+    <p align="justify">З 12 років намагаюся розібратися з написанням сайтів, але до 18 років не приділяв багато зусиль, тому на данний момент часу я не маю <u>ніяких досягнень</u> в цьому напрямку. Лише на 2-му курсі, коли в мене з'явилася вибіркова дисципліна, пов'язана з цим напрямком, я знову загорівся ідеєю стати <b>веб-розробником</b>.</p>
+
+    <h1 align="center">Моє хоббі</h1>
+    <p align="justify">На данний момент в мене не має хоббі, насправді я б не зміг би охарактеризувати це як <b>"хоббі"</b>. Нещодавно я записався на безкоштовний курс <i>JavaScript/Front-end 2024Q4</i> від онлайн школи <b>"RS-Shool"</b>. Кожного дня я виконую певні таски та вчу щось нове. Я витрачаю більшість свого вільного часу на це, тому це можна вважати як моє хоббі <i>(Чи ні? Хто зна)</i>.</p>
+
+    <h2>Програмування</h2>
+    <p align="justify">В мене були <b>спроби створити власну</b> гру ще у 13 років, але доробити її до кінця не зміг. На 2-му курсі в мене була курсова робота, мета якої була розробка гри на мові C#, використовуючи будь-яке ядро для неї. Тому я б хотів розмістити частину коду для реалізації атаки гравця:</p>
+    
+    <p align="center">
+        <pre>
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerAttack : MonoBehaviour
+{
+    // Аніматор для запуску анімацій
+    public Animator anim;
+    // Точка атаки, від якої буде перевірятися зона ураження
+    public Transform attakPoint;
+    // Радіус зони ураження
+    public float attakRange = 0.5f;
+    // Шар ворогів, які будуть уражені
+    public LayerMask Enemy;
+    // Шкода, яка буде завдана при атаці
+    public int atkDamage = 1;
+
+    void Update()
+    {
+        // Перевірка на натискання лівої кнопки миші для запуску атаки
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Attack();
+        }
+    }
+
+    void Attack()
+    {
+        // Запускаємо анімацію атаки
+        anim.SetTrigger("attak");
+        // Знаходимо всі об'єкти у зоні атаки, які мають шар ворогів
+        Collider2D[] hitenemies = Physics2D.OverlapCircleAll(attakPoint.position,
+        attakRange, Enemy);
+        // Проходимося по всіх уражених ворогах
+        foreach(Collider2D Enemy in hitenemies)
+        {
+            // Завдаємо шкоди кожному ворогу, який має компонент Enemy
+            Enemy.GetComponent<Enemy>().takedamage(atkDamage);
+        }
+    }
+    
+    // Відображення зони ураження в редакторі для зручності налаштування
+    private void OnDrawGizmosSelected()
+    {
+        if (attakPoint == null)
+        {
+            return;
+        }
+        // Малюємо сферу в місці точки атаки для візуалізації зони ураження
+        Gizmos.DrawWireSphere(attakPoint.position, attakRange);
+    }
+}
+        </pre>
+    </p>
+    
+    <footer>
+        <p align="right"><i><u>Студент групи 304-ТН  Ликов Д.Д.</u></i></p>
+    </footer>
+</body>
+</html>
