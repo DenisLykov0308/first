@@ -1,0 +1,40 @@
+body {
+    background-image: url('img/back.jfif');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #ff5733; 
+    font-style: normal;
+}
+
+p {
+    text-indent: 2em;  
+    text-align: justify;  
+    font-style: italic; 
+    margin: 20px 40px; 
+    font-size: 16pt; 
+    color: wheat;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:active {
+    color: red;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
