@@ -30,6 +30,18 @@
             <label for="username">Логін</label>
             <input type="text" id="username" name="username" required>
 
+            <label for="group">Вибір навчальної групи</label>
+            <select id="group" name="group" required>
+                <option value="group1">301-ТН</option>
+                <option value="group2">302-ТН</option>
+                <option value="group3">303-ТН</option>
+                <option value="group3">304-ТН</option>
+                <option value="group3">305-ТН</option>
+            </select>
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required>
+
         </form>
     </div>
 
@@ -115,14 +127,17 @@
             color: #555;
         }
 
-        .registration-form input {
+        .registration-form input,
+        .registration-form select {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
+        .registration-form input[type="password"] {
+        width: 100%;
+        }
 
         footer{
             background-color: rgb(61, 61, 61);
