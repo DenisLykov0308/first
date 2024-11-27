@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прості числа та перевірка чисел</title>
+</head>
+<body>
+    <h1>Прості числа від 0 до 100:</h1>
+    <div id="result"></div>
+
+    <h1>Числа від 0 до 10:</h1>
+    <div id="checkNumbers"></div>
+
+    <h1>Результати поділу числа на 2:</h1>
+    <div id="divisionResult"></div>
+
+    <h1>Переведення температури з Цельсія в Фаренгейт:</h1>
+    <div id="temperatureResult"></div>
+
+    <script>
+        // Функція для перевірки простих чисел
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Виведення простих чисел від 0 до 100
+        let resultDiv = document.getElementById('result');
+        let primes = []; 
+        let i = 0;
+        while (i <= 100) {
+            if (isPrime(i)) {
+                primes.push(i);
+            }
+            i++;
+        }
+        resultDiv.innerHTML = primes.join(', ');
+
+        // Функція для перевірки чисел від 0 до 10
+        let checkNumbersDiv = document.getElementById('checkNumbers');
+        let checkNumbersResult = [];
+        let j = 0;
+        do {
+            if (j === 0) {
+                checkNumbersResult.push(`${j} – це нуль`);
+            } else if (j % 2 === 0) {
+                checkNumbersResult.push(`${j} – парне число`);
+            } else {
+                checkNumbersResult.push(`${j} – непарне число`);
+            }
+            j++;
+        } while (j <= 10);
+
+        checkNumbersDiv.innerHTML = checkNumbersResult.join('<br>');
+
+        // Ділимо число на 2, поки результат не стане менше 50
+        let numb = 10000;
+        let result;
+        let counter = 0;
+
+        // Делим число на 2 до тех пор, пока оно не станет меньше 50
+        while (numb >= 50) {
+            numb /= 2;
+            counter++;
+        }
+
+        // Результат деления и количество итераций
+        result = numb;
+
+        // Выводим результат и количество итераций в элемент на странице
+        let divisionResultDiv = document.getElementById('divisionResult');
+        divisionResultDiv.innerHTML = `Результат: ${result}<br>Количество итераций: ${counter}`;
+
+        // Получаем номер месяца через prompt
+        let month = parseInt(prompt("Введіть номер місяця (від 1 до 12):"));
+
+        // Проверка на корректность ввода
+        if (month < 1 || month > 12 || isNaN(month)) {
+            alert("Будь ласка, введіть число від 1 до 12.");
+        } else {
+            let season;
+            let monthName;
+
+            // Определяем пору года и название месяца
+            switch (month) {
+                case 1: case 2: case 12:
+                    season = "Зима";
+                    monthName = (month === 1) ? "Січень" : (month === 2) ? "Лютий" : "Грудень";
+                    break;
+                case 3: case 4: case 5:
+                    season = "Весна";
+                    monthName = (month === 3) ? "Березень" : (month === 4) ? "Квітень" : "Травень";
+                    break;
+                case 6: case 7: case 8:
+                    season = "Літо";
+                    monthName = (month === 6) ? "Червень" : (month === 7) ? "Липень" : "Серпень";
+                    break;
+                case 9: case 10: case 11:
+                    season = "Осінь";
+                    monthName = (month === 9) ? "Вересень" : (month === 10) ? "Жовтень" : "Листопад";
+                    break;
+                default:
+                    season = "Невідомо";
+                    monthName = "Невідомий місяць";
+            }
+
+            // Выводим результат в alert
+            alert(`Місяць: ${monthName}\nПора року: ${season}`);
+        }
+
+        // Запрашиваем температуру в градусах Цельсия
+        let Tc = parseFloat(prompt("Введіть температуру в градусах Цельсієм:"));
+
+        // Переводим в градусы Фаренгейта по формуле
+        let Tf = (9 / 5) * Tc + 32;
+
+        // Выводим результат перевода в элемент на странице
+        let temperatureResultDiv = document.getElementById('temperatureResult');
+        temperatureResultDiv.innerHTML = `Температура за Фаренгейтом: ${Tf}`;
+    </script>
+</body>
+</html>
