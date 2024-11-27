@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="about">
+            <h1>Мій особистий блог</h1>
+            <p>Владислав Бублик</p>
+        </div>
+        <div class="login">
+            <a href="">Вхід</a>
+            <a href="">Реєстрація</a>
+        </div>
+    </header>
+    <div class="line"></div>
+
+    <div class="form-container">
+        <form class="registration-form">
+            <h2>Реєстрація користувача</h2>
+            <label for="surname">Прізвище</label>
+            <input type="text" id="surname" name="surname" required>
+
+        </form>
+    </div>
+
+    <footer>
+        <p>© Всі права захищені</p>
+    </footer>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            background-color: #7fb6ff;
+            height: 10vh;
+        }
+        .about{
+           
+        }
+        .about p{
+            color: white;
+            font-weight: bold;
+            padding-left: 25%;
+        }
+        .login{
+            align-content: center;
+        }
+        .login a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .login a:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .line{
+            height: 5px;
+            background-color: red;
+            width: 100%;
+        }
+
+        .form-container {       
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 2px solid gray;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .registration-form h2 {     
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            background-color: #7fb6ff;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        .registration-form label {      
+            font-size: 14px;
+            margin-bottom: 8px;
+            margin-top: 15px;
+            padding-left: 8px;
+            font-weight: bold;
+            display: block;
+            color: #555;
+        }
+
+        .registration-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+        footer{
+            background-color: rgb(61, 61, 61);
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        footer p{
+            color: white;
+            font-size: small;
+        }
+    </style>
+</body>
+</html>
