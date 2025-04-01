@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зміна кольору div</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            background-color: blue;
+            cursor: pointer; 
+            border: 1px solid #ccc; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Натискайте на квадрати для зміни кольору</h1>
+
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+
+    <script>
+        function paintRed(event) {
+            event.target.style.backgroundColor = 'red'; 
+            event.target.removeEventListener('click', paintRed);
+            event.target.addEventListener('click', paintGreen); 
+        }
+        function paintGreen(event) {
+            event.target.style.backgroundColor = 'green'; 
+            event.target.removeEventListener('click', paintGreen); 
+            event.target.addEventListener('click', paintRed);
+        }
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box => {
+            box.addEventListener('click', paintGreen);
+        });
+    </script>
+</body>
+</html>

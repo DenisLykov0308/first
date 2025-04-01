@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Парні числа</title>
+</head>
+<body>
+    <h1>Парні числа від 0 до 100</h1>
+    <button id="showEvenNumbers">Показати парні числа в консолі</button>
+
+    <script>
+        function showEvenNumbers() {
+            let number = 0;
+
+            do {
+                console.log(number);
+                number += 2;
+            } while (number <= 100);
+        }
+        document.getElementById('showEvenNumbers').addEventListener('click', showEvenNumbers);
+    </script>
+</body>
+</html>

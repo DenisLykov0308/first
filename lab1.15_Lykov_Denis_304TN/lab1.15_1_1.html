@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Натуральні числа</title>
+</head>
+<body>
+    <h1>Натуральні числа від -100 до 100</h1>
+    <div id="output"></div>
+
+    <script>
+        let number = -100;
+        let output = '';
+
+        while (number <= 100) {
+            if (number > 0) {
+                output += number + '<br>';
+            }
+            number++;
+        }
+        document.getElementById('output').innerHTML = output;
+    </script>
+</body>
+</html>

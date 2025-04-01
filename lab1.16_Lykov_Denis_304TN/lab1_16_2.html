@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обробка подій на посиланнях</title>
+    <style>
+        a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наведіть на посилання</h1>
+    
+    <a href="https://example.com/1" title="">Посилання 1</a>
+    <a href="https://example.com/2" title="">Посилання 2</a>
+    <a href="https://example.com/3" title="">Посилання 3</a>
+
+    <script>
+
+        function handleMouseOver(event) {
+            const hrefValue = event.target.getAttribute('href');
+            event.target.setAttribute('title', hrefValue);
+        }
+        function handleMouseOut(event) {
+            event.target.removeAttribute('title');
+        }
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseover', handleMouseOver);
+            link.addEventListener('mouseout', handleMouseOut);
+        });
+    </script>
+</body>
+</html>

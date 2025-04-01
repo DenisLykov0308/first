@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let question = prompt("Введіть число від 1 до 31:", '');
+        let day = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота", "Неділя"];
+        if(question < 0 || question > 31){
+            alert("Від 1 до 31!")
+            question = prompt("Введіть число від 1 до 31:", '');
+        }
+        alert("Ваш день: " + day[question % 7 - 1]);
+    </script>
+</body>
+</html>
