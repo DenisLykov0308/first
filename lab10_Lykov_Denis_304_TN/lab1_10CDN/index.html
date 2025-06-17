@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Моє хобі - React CDN</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #eef2f7;
+    }
+    #root {
+      background: white;
+      border: 2px solid #444;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class HobbyClass extends React.Component {
+      render() {
+        return (
+          <div>
+            <h2>Класовий компонент</h2>
+            <p>Моє хобі — ігри</p>
+          </div>
+        );
+      }
+    }
+    function HobbyFunction() {
+      return (
+        <div>
+          <h2>Функціональний компонент</h2>
+          <p>Також я захоплююсь програмуванням </p>
+        </div>
+      );
+    }
+    function App() {
+      return (
+        <div>
+          <HobbyClass />
+          <hr />
+          <HobbyFunction />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX: Квадрат числа</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, button { padding: 10px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Введіть число:</h2>
+  <input type="number" id="numberInput" placeholder="Введіть число">
+  <button onclick="sendNumber()">Надіслати</button>
+
+  <p id="result"></p>
+
+  <script>
+    function sendNumber() {
+      const number = document.getElementById('numberInput').value;
+
+      fetch('/calculate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ number: Number(number) })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').innerText = 
+          `Квадрат числа ${data.number} = ${data.square}`;
+      })
+      .catch(error => {
+        console.error('Помилка:', error);
+      });
+    }
+  </script>
+
+</body>
+</html>

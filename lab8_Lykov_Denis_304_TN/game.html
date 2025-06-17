@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-box">
+    <div class="top-timer">
+      <span>Таймер: <span id="timer">60</span> сек</span>
+    </div>
+
+    <div class="grid" id="game-field"></div>
+
+    <div class="bottom-controls">
+      <button class="start-btn" id="restart">Почати з початку</button>
+    </div>
+
+    <div id="message"></div>
+
+    <table class="results-table" id="stats">
+      <thead><tr><th>Назва гри</th><th>Час</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
